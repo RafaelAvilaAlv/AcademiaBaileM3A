@@ -1,5 +1,4 @@
 package Conexion;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -10,16 +9,16 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 public class ConexionPG {
+    Connection con;
+ private Statement st;
+    String cadenaConexion = "jdbc:postgresql://localhost:5432/AcademiaBaile";
+    String usuarioPG = "postgres";
+    String passPG = "1234";
+   
 
-    String URL = "jdbc:postgresql://localhost:5432/AcademiaBaile";
-    private final String USER = "postgres";
-    private final String PASSWORD = "1234";
-
-    private Connection con = null;
-    private Statement st;
 
     public ConexionPG() {
-        con = null;
+
         try {
             Class.forName("org.postgresql.Driver");
         } catch (ClassNotFoundException ex) {
@@ -27,13 +26,45 @@ public class ConexionPG {
         }
 
         try {
-            con = DriverManager.getConnection(URL, USER, PASSWORD);
+
+            con = DriverManager.getConnection(cadenaConexion, usuarioPG, passPG);
         } catch (SQLException ex) {
             Logger.getLogger(ConexionPG.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    public boolean CRUD(String sql) {
+    public ResultSet Consultas(String sql) {
+
+        try {
+            Statement st = con.createStatement();
+            return st.executeQuery(sql);
+
+        } catch (SQLException ex) {
+            Logger.getLogger(ConexionPG.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+
+    //FORMA DE SQLException
+    public SQLException accion(String sql) {
+        try {
+            Statement st = con.createStatement();
+            st.execute(sql);
+            st.close();
+            return null;
+        } catch (SQLException ex) {
+            //Logger.getLogger(ConexionPG.class.getName()).log(Level.SEVERE, null, ex); //NO PONER EL LOGGER, CASO CONTRARIO SALE LA EXECEPCION EN LA CONSOLA
+            JOptionPane.showMessageDialog(null, "Error: " + ex.getMessage());
+            return ex;
+        }
+
+    }
+
+    public Connection getCon() {
+        return con;
+    }
+    
+      public boolean CRUD(String sql) {
         st = null;
         try {
             st = con.createStatement();
@@ -45,28 +76,4 @@ public class ConexionPG {
             return false;
         }
     }
-
-    public ResultSet Consultas(String SQL) {
-
-        st = null;
-        try {
-            st = con.createStatement();
-            ResultSet rs = st.executeQuery(SQL);
-            return rs;
-        } catch (SQLException ex) {
-            Logger.getLogger(ConexionPG.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        return null;
-    }
-    public Connection conectar() {
-        try {
-            Class.forName("org.postgresql.Driver");
-            con = DriverManager.getConnection(URL, USER,PASSWORD);
-
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error al conectar " + e, "Error", JOptionPane.ERROR_MESSAGE);
-        }
-       
-       return con;
- }
 }

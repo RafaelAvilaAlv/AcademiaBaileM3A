@@ -5,6 +5,9 @@
  */
 package Main;
 
+import Controlador.ControladorPrincipal;
+import Vista.VistaInicio;
+
 /**
  *
  * @author Christian
@@ -12,7 +15,9 @@ package Main;
 public class MenuPrincipal {
     
     public static void main(String[] args) {
-        
+        VistaInicio vm = new VistaInicio();
+        ControladorPrincipal cm = new ControladorPrincipal(vm);
+        cm.IniciarControlador();
     }
     
 }
