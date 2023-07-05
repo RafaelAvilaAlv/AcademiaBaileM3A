@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package Controlador;
+
 import Modelo.ModeloHorario;
 import Vista.VistaHorario;
 import Vista.VistaPrincipal;
@@ -36,9 +37,12 @@ public class ControladorP {
     }
 
     private void registroHorario() {
+        vistaprincipal.getEscritorioPrincipal().removeAll(); //Remuevo todos los elementos que esten en sobre el desktopPane
         VistaHorario vista = new VistaHorario();
         ModeloHorario modelo = new ModeloHorario();
         vistaprincipal.getEscritorioPrincipal().add(vista);
+        ControladorHorario control = new ControladorHorario(modelo, vista);
+        control.iniciarControl();
 
     }
 

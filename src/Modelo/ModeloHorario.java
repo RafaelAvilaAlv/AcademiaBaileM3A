@@ -17,14 +17,31 @@ public class ModeloHorario extends Horario {
     }
 
     public ModeloHorario(int codigo, String horaInicio, String horaFin, String dia) {
-        super(codigo, horaInicio,horaFin,dia);
+        super(codigo, horaInicio, horaFin, dia);
     }
 
     public SQLException crearHorario() {
 
-        String sql = "Insert into horario (hora_ini, hora_fin, dia) values ('" + getHora_ini() + "', '" + getHora_fin() + "', '" + getDia()+ "')";
+        String sql = "Insert into horario (pk_idhorario,hora_ini, hora_fin, dia) values ('" + getCod_horario() + "','" + getHora_ini() + "', '" + getHora_fin() + "', '" + getDia() + "')";
 
         return conpg.accion(sql);
+    }
+
+    public int CargarCod() throws SQLException {
+
+        int codigo = 0;
+
+        String sql = "select max(pk_idhorario) from horario;";
+        ResultSet res = conpg.Consultas(sql);
+
+        while (res.next()) {
+
+            codigo = res.getInt("max") + 1;
+        }
+
+        res.close();
+        return codigo;
+
     }
 
     public SQLException modificarHorario() {
@@ -33,9 +50,7 @@ public class ModeloHorario extends Horario {
         return conpg.accion(sql);
     }
 
-   
-
-    public List<Horario> listaHorarioTabla() {
+    /* public List<Horario> listaHorarioTabla() {
         try {
             List<Horario> lista = new ArrayList<>();
 
@@ -63,6 +78,33 @@ public class ModeloHorario extends Horario {
         } catch (SQLException ex) {
             Logger.getLogger(ModeloHorario.class.getName()).log(Level.SEVERE, null, ex);
             return null;
+        }*/
+    public List<Horario> listaHorarioTabla() {
+
+        try {
+            String sql = "select * from horario "
+                    + "order by pk_idhorario;";
+            ResultSet res = conpg.Consultas(sql);
+            List<Horario> horario = new ArrayList<>();
+
+            while (res.next()) {
+
+                Horario mihorario = new Horario();
+
+                mihorario.setCod_horario(res.getInt("pk_idhorario"));
+                mihorario.setHora_ini(res.getString("hora_ini"));
+                mihorario.setHora_fin(res.getString("hora_fin"));
+                mihorario.setDia(res.getString("dia"));
+
+                horario.add(mihorario);
+            }
+            res.close();
+            return horario;
+        } catch (SQLException ex) {
+            Logger.getLogger(ModeloHorario.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
         }
+
     }
+
 }
