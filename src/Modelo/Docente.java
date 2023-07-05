@@ -4,20 +4,24 @@
  */
 package Modelo;
 
+import java.util.Date;
+
 /**
  *
  * @author ASUS
  */
-public class Docente {
+public class Docente extends Empleado {
+
     private int pk_doccod;
     private int fk_codemple;
     private String especialidad;
-       private String  estdo ;
+    private String estdo;
 
     public Docente() {
     }
 
-    public Docente(int pk_doccod, int fk_codemple, String especialidad, String estdo) {
+    public Docente(int pk_doccod, int fk_codemple, String especialidad, String estdo, int cod_empleado, double salario, String cedula_per1, java.sql.Date fecha_contratacion, String cedula_per, String primeNombre_per, String segundoNombre_per, String apellidoPat_per, String apellidoMat_per, String telefono_per, String direccion_per, String email_per, String genero_per, java.sql.Date fechaNacimiento_per) {
+        super(cod_empleado, salario, cedula_per1, fecha_contratacion, cedula_per, primeNombre_per, segundoNombre_per, apellidoPat_per, apellidoMat_per, telefono_per, direccion_per, email_per, genero_per, fechaNacimiento_per);
         this.pk_doccod = pk_doccod;
         this.fk_codemple = fk_codemple;
         this.especialidad = especialidad;
@@ -60,5 +64,5 @@ public class Docente {
     public String toString() {
         return "Docente{" + "pk_doccod=" + pk_doccod + ", fk_codemple=" + fk_codemple + ", especialidad=" + especialidad + ", estdo=" + estdo + '}';
     }
-       
+
 }

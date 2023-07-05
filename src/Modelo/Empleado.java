@@ -4,25 +4,35 @@
  */
 package Modelo;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 /**
  *
  * @author ASUS
  */
-public class Empleado {
+public class Empleado extends Persona{
     private int cod_empleado;
     private double salario;
-    private String cedula_per;
+    private String cedula_per1;
     private Date fecha_contratacion;
 
     public Empleado() {
+       
     }
 
     public Empleado(int cod_empleado, double salario, String cedula_per, Date fecha_contratacion) {
         this.cod_empleado = cod_empleado;
         this.salario = salario;
-        this.cedula_per = cedula_per;
+        this.cedula_per1 = cedula_per;
+        this.fecha_contratacion = fecha_contratacion;
+    }
+
+    public Empleado(int cod_empleado, double salario, String cedula_per1, Date fecha_contratacion, String cedula_per, String primeNombre_per, String segundoNombre_per, String apellidoPat_per, String apellidoMat_per, String telefono_per, String direccion_per, String email_per, String genero_per, Date fechaNacimiento_per) {
+        super(cedula_per, primeNombre_per, segundoNombre_per, apellidoPat_per, apellidoMat_per, telefono_per, direccion_per, email_per, genero_per, fechaNacimiento_per);
+        this.cod_empleado = cod_empleado;
+        this.salario = salario;
+        this.cedula_per1 = cedula_per1;
         this.fecha_contratacion = fecha_contratacion;
     }
 
@@ -42,12 +52,12 @@ public class Empleado {
         this.salario = salario;
     }
 
-    public String getCedula_per() {
-        return cedula_per;
+    public String getCedula_per1() {
+        return cedula_per1;
     }
 
-    public void setCedula_per(String cedula_per) {
-        this.cedula_per = cedula_per;
+    public void setCedula_per1(String cedula_per1) {
+        this.cedula_per1 = cedula_per1;
     }
 
     public Date getFecha_contratacion() {
@@ -60,7 +70,8 @@ public class Empleado {
 
     @Override
     public String toString() {
-        return "Empleado{" + "cod_empleado=" + cod_empleado + ", salario=" + salario + ", cedula_per=" + cedula_per + ", fecha_contratacion=" + fecha_contratacion + '}';
+        return "Empleado{" + "cod_empleado=" + cod_empleado + ", salario=" + salario + ", cedula_per1=" + cedula_per1 + ", fecha_contratacion=" + fecha_contratacion + '}';
     }
-    
+
+  
 }
