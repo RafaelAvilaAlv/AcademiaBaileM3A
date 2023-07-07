@@ -5,46 +5,50 @@
  */
 package Modelo;
 
+import java.sql.Date;
+
 /**
  *
  * @author Christian
  */
-public class Estudiante {
+public class Estudiante extends Persona{
     
-    private int est_codigo, fk_cedula_per;
+    private int pk_idestudiante;
+     private String fk_cedulaper;
     private String representante;
     private String telefonorepresentante;
-    private String correo;
-    private String est_estado;
+    private String correorepresentante;
+    private String estado;
 
     public Estudiante() {
     }
-
-    public Estudiante(int est_codigo, int fk_cedula_per, String representante, String telefonorepresentante, String correo, String est_estado) {
-        this.est_codigo = est_codigo;
-        this.fk_cedula_per = fk_cedula_per;
+    
+   
+    public Estudiante(int pk_idestudiante, String representante, String fk_cedulaper, String telefonorepresentante, String correorepresentante, String estado) {
+        this.pk_idestudiante = pk_idestudiante;
         this.representante = representante;
+        this.fk_cedulaper = fk_cedulaper;
         this.telefonorepresentante = telefonorepresentante;
-        this.correo = correo;
-        this.est_estado = est_estado;
-    }
-    
-    
-
-    public int getEst_codigo() {
-        return est_codigo;
+        this.correorepresentante = correorepresentante;
+        this.estado = estado;
     }
 
-    public void setEst_codigo(int est_codigo) {
-        this.est_codigo = est_codigo;
+    public Estudiante(int pk_idestudiante, String representante, String fk_cedulaper, String telefonorepresentante, String correorepresentante, String estado, String cedula_per, String primeNombre_per, String segundoNombre_per, String apellidoPat_per, String apellidoMat_per, String telefono_per, String direccion_per, String email_per, String genero_per, Date fechaNacimiento_per) {
+        super(cedula_per, primeNombre_per, segundoNombre_per, apellidoPat_per, apellidoMat_per, telefono_per, direccion_per, email_per, genero_per, fechaNacimiento_per);
+        this.pk_idestudiante = pk_idestudiante;
+        this.representante = representante;
+        this.fk_cedulaper = fk_cedulaper;
+        this.telefonorepresentante = telefonorepresentante;
+        this.correorepresentante = correorepresentante;
+        this.estado = estado;
     }
 
-    public int getFk_cedula_per() {
-        return fk_cedula_per;
+    public int getPk_idestudiante() {
+        return pk_idestudiante;
     }
 
-    public void setFk_cedula_per(int fk_cedula_per) {
-        this.fk_cedula_per = fk_cedula_per;
+    public void setPk_idestudiante(int pk_idestudiante) {
+        this.pk_idestudiante = pk_idestudiante;
     }
 
     public String getRepresentante() {
@@ -55,6 +59,14 @@ public class Estudiante {
         this.representante = representante;
     }
 
+    public String getFk_cedulaper() {
+        return fk_cedulaper;
+    }
+
+    public void setFk_cedulaper(String fk_cedulaper) {
+        this.fk_cedulaper = fk_cedulaper;
+    }
+
     public String getTelefonorepresentante() {
         return telefonorepresentante;
     }
@@ -63,28 +75,20 @@ public class Estudiante {
         this.telefonorepresentante = telefonorepresentante;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getCorreorepresentante() {
+        return correorepresentante;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setCorreorepresentante(String correorepresentante) {
+        this.correorepresentante = correorepresentante;
     }
 
-    public String getEst_estado() {
-        return est_estado;
+    public String getEstado() {
+        return estado;
     }
 
-    public void setEst_estado(String est_estado) {
-        this.est_estado = est_estado;
+    public void setEstado(String estado) {
+        this.estado = estado;
     }
-
-    @Override
-    public String toString() {
-        return "Estudiante{" + "est_codigo=" + est_codigo + ", fk_cedula_per=" + fk_cedula_per + ", representante=" + representante + ", telefonorepresentante=" + telefonorepresentante + ", correo=" + correo + ", est_estado=" + est_estado + '}';
-    }
-    
-    
-    
     
 }

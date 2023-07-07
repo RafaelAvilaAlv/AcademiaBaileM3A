@@ -11,56 +11,56 @@ package Modelo;
  */
 public class Asignatura {
     
-    private int id_asi;
-    private int fk_idCurso;
-    private String nombreasi;
-    private String descripcionasi;
+    private int pk_idasig;
+    private int fk_idcurso;
+    private String nombreasig;
+    private String descripcionasig;
 
     public Asignatura() {
     }
 
-    public Asignatura(int id_asi, int fk_idCurso, String nombreasi, String descripcionasi) {
-        this.id_asi = id_asi;
-        this.fk_idCurso = fk_idCurso;
-        this.nombreasi = nombreasi;
-        this.descripcionasi = descripcionasi;
+    public Asignatura(int pk_idasig, int fk_idcurso, String nombreasig, String descripcionasig) {
+        this.pk_idasig = pk_idasig;
+        this.fk_idcurso = fk_idcurso;
+        this.nombreasig = nombreasig;
+        this.descripcionasig = descripcionasig;
     }
 
-    public int getId_asi() {
-        return id_asi;
+    public int getPk_idasig() {
+        return pk_idasig;
     }
 
-    public void setId_asi(int id_asi) {
-        this.id_asi = id_asi;
+    public void setPk_idasig(int pk_idasig) {
+        this.pk_idasig = pk_idasig;
     }
 
-    public int getFk_idCurso() {
-        return fk_idCurso;
+    public int getFk_idcurso() {
+        return fk_idcurso;
     }
 
-    public void setFk_idCurso(int fk_idCurso) {
-        this.fk_idCurso = fk_idCurso;
+    public void setFk_idcurso(int fk_idcurso) {
+        this.fk_idcurso = fk_idcurso;
     }
 
-    public String getNombreasi() {
-        return nombreasi;
+    public String getNombreasig() {
+        return nombreasig;
     }
 
-    public void setNombreasi(String nombreasi) {
-        this.nombreasi = nombreasi;
+    public void setNombreasig(String nombreasig) {
+        this.nombreasig = nombreasig;
     }
 
-    public String getDescripcionasi() {
-        return descripcionasi;
+    public String getDescripcionasig() {
+        return descripcionasig;
     }
 
-    public void setDescripcionasi(String descripcionasi) {
-        this.descripcionasi = descripcionasi;
+    public void setDescripcionasig(String descripcionasig) {
+        this.descripcionasig = descripcionasig;
     }
 
     @Override
     public String toString() {
-        return "Asignatura{" + "id_asi=" + id_asi + ", fk_idCurso=" + fk_idCurso + ", nombreasi=" + nombreasi + ", descripcionasi=" + descripcionasi + '}';
+        return "Asignatura{" + "pk_idasig=" + pk_idasig + ", fk_idCurso=" + fk_idcurso + ", nombreasig=" + nombreasig + ", descripcionasig=" + descripcionasig + '}';
     }
     
     

@@ -3,18 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Vista/VistaPrincipal.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Conexion/ConexionPG.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Controlador/ControladorPrincipal.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Main/MenuPrincipal.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Modelo/ModeloHorario.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Modelo/ModeloMatricula.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Controlador/ControladorP.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Modelo/ModeloEventos.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Modelo/ModeloPersona.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Modelo/ModeloPersonal_Admin.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Controlador/ControladorHorario.java</file>
-            <file>file:/C:/Users/estef/OneDrive/Escritorio/AcademiaBaileM3A/src/Vista/VistaHorario.java</file>
+            <file>file:/C:/Users/Christian/Documents/GitHub/AcademiaBaileM3A/src/Modelo/Curso.java</file>
+            <file>file:/C:/Users/Christian/Documents/GitHub/AcademiaBaileM3A/src/Modelo/ModeloCurso.java</file>
         </group>
     </open-files>
 </project-private>
